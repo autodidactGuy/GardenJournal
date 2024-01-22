@@ -1,6 +1,12 @@
 # Garden Journal App
 A Gardening Journal App using Android Kotlin that incorporates ViewModel, LiveData, Navigation component, NavHostFragment, Room database, and coroutine concepts.
 
+## Instructions
+
+`Clone the Repo`
+`Open this project in Latest Android Studio`
+`Run app on Emulator / Connected Android Device`
+
 ## Navigation Structure:
 
 Create a gardening app with at least three main screens: Home, Garden Log, and Plant Details.
