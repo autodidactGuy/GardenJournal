@@ -1,6 +1,8 @@
 package edu.miu.cs473.gardenjournal.ui
 
+import android.app.Application
 import android.content.Context
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,13 +11,13 @@ import edu.miu.cs473.gardenjournal.db.Plant
 import edu.miu.cs473.gardenjournal.db.PlantRepository
 import kotlinx.coroutines.launch
 
-class GardenLogViewModel(context: Context): ViewModel(){
+class GardenLogViewModel(application: Application): AndroidViewModel(application){
     private val repository: PlantRepository
 
     val allPlants: LiveData<List<Plant>>
 
     init{
-        repository = PlantRepository(context)
+        repository = PlantRepository(application)
         allPlants = repository.allPlants
     }
 

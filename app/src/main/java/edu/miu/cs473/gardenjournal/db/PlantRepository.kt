@@ -1,14 +1,15 @@
 package edu.miu.cs473.gardenjournal.db
 
+import android.app.Application
 import android.content.Context
 import androidx.lifecycle.LiveData
 
-class PlantRepository(context: Context) {
+class PlantRepository(application: Application) {
     private val plantDao: PlantDao
     val allPlants: LiveData<List<Plant>>
 
     init {
-        val database = PlantDatabase.getDatabase(context)
+        val database = PlantDatabase.getDatabase(application)
         plantDao = database.plantDao()
         allPlants = plantDao.getAllPlants()
     }

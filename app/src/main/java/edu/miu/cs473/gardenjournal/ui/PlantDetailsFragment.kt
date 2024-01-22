@@ -1,15 +1,17 @@
 package edu.miu.cs473.gardenjournal.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import edu.miu.cs473.gardenjournal.R
 import edu.miu.cs473.gardenjournal.db.Plant
+
 
 class PlantDetailsFragment : Fragment() {
 
@@ -30,7 +32,7 @@ class PlantDetailsFragment : Fragment() {
         // Get the plantId from the arguments
         plantId = arguments?.getInt("plantId") ?: 0
 
-        viewModel = GardenLogViewModel(requireContext())
+        val viewModel: GardenLogViewModel by viewModels()
 
         // Observe the plant details and update UI
         viewModel.getPlantById(plantId).observe(viewLifecycleOwner, Observer { plant ->

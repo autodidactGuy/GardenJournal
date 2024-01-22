@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import edu.miu.cs473.gardenjournal.R
@@ -21,7 +23,7 @@ class AddPlantFragment : BaseFragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_plant, container, false)
         val buttonSave = view.findViewById<FloatingActionButton>(R.id.button_save)
-        val viewModel = GardenLogViewModel(requireContext())
+        val viewModel: GardenLogViewModel by viewModels()
         buttonSave.setOnClickListener {
             val plantName = view.findViewById<EditText>(R.id.plantName)
             val plantType = view.findViewById<EditText>(R.id.plantType)
