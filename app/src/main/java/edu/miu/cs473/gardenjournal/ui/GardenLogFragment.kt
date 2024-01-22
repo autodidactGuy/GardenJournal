@@ -40,11 +40,13 @@ class GardenLogFragment : BaseFragment() {
             context?.let {
                 viewModel.allPlants.observe(viewLifecycleOwner, Observer { plants ->
                     plants?.let {
+                        // check if plants are empty add sample plants
                         if (plants.isEmpty()) {
                             for (plant in samplePlants) {
                                 viewModel.insert(plant)
                             }
                         }
+
                         val plantAdapter = PlantListAdapter(plants)
                         plantAdapter.onItemClick = { plant ->
                             val action = GardenLogFragmentDirections.actionGardenLogFragmentToPlantDetailsFragment()
