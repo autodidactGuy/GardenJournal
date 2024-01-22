@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="edu.miu.cs473.gardenjournal.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_gardenLogFragment"
+            app:destination="@id/gardenLogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlantFragment"
+        android:name="edu.miu.cs473.gardenjournal.ui.AddPlantFragment"
+        android:label="Add Plant"
+        tools:layout="@layout/fragment_add_plant">
+        <action
+            android:id="@+id/action_addPlantFragment_to_gardenLogFragment"
+            app:destination="@id/gardenLogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantDetailsFragment"
+        android:name="edu.miu.cs473.gardenjournal.ui.PlantDetailsFragment"
+        android:label="Plant Details"
+        tools:layout="@layout/fragment_plant_details">
+        <action
+            android:id="@+id/action_plantDetailsFragment_to_gardenLogFragment"
+            app:destination="@id/gardenLogFragment" />
+        <argument
+            android:name="plantId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/gardenLogFragment"
+        android:name="edu.miu.cs473.gardenjournal.ui.GardenLogFragment"
+        android:label="Garden"
+        tools:layout="@layout/fragment_garden_log">
+        <action
+            android:id="@+id/action_gardenLogFragment_to_plantDetailsFragment"
+            app:destination="@id/plantDetailsFragment" />
+        <action
+            android:id="@+id/action_gardenLogFragment_to_addPlantFragment"
+            app:destination="@id/addPlantFragment" />
+        <action
+            android:id="@+id/action_gardenLogFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

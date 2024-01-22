@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.PlantDetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/plantName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plant Name"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/plantType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type: " />
+
+    <TextView
+        android:id="@+id/wateringFrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watering Freuquency: " />
+
+    <TextView
+        android:id="@+id/plantingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planting Date: " />
+
+</LinearLayout>
