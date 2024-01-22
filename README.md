@@ -4,7 +4,7 @@ A Gardening Journal App using Android Kotlin that incorporates ViewModel, LiveDa
 ## Instructions
 
 <ul>
- <li> <code>Clone the Repo</code> </li> 
+ <li> <code>Clone this Repo</code> </li> 
  <li> <code>Open this project in Latest Android Studio</code> </li> 
  <li> <code>Run app on Emulator / Connected Android Device</code> </li>  
 </ul>
